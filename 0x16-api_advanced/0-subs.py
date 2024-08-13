@@ -1,11 +1,17 @@
 #!/usr/bin/python3
 
+"""
+Queries the Reddit API and returns the number of subscribers for a
+given subreddit
+If the subreddit is invalid, the function returns 0.
+"""
+
+
 def number_of_subscribers(subreddit):
 
     """
-    Queries the Reddit API and returns the number of subscribers for a
-    given subreddit
-    If the subreddit is invalid, the function returns 0.
+    Function that queries the Reddit API
+    - If not a valid subreddit, return 0.
     """
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {"User-Agents": "myApp/0.0.1"}

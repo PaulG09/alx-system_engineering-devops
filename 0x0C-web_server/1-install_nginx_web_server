@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# This script installs and configures Nginx to serve a custom page
+
+# Update the package list and install Nginx
+apt-get update -y
+apt-get install nginx -y
+
+# Ensure Nginx is listening on port 80 (default behavior)
+# Nginx should already be configured to listen on port 80 after installation
+
+# Create a custom HTML page with "Hello World!" content
+echo "Hello World!" > /var/www/html/index.html
+
+# Restart Nginx without using systemctl
+service nginx restart
+
+# Ensure Nginx is properly running
+if [ $? -eq 0 ]; then
+  echo "Nginx installed and configured successfully."
+else
+  echo "Failed to configure Nginx."
+  exit 1
+fi
